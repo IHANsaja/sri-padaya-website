@@ -1,0 +1,15 @@
+/* Ensure the canvas covers the full screen */
+body {
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #20232a; /* Optional background color */
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
