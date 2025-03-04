@@ -1,7 +1,9 @@
+import HeroBack from '../assets/hero_back.jpg';
+
 const HeroSection = () => {
   return (
     <div>
-      <h1>Hero Section</h1>
+      <img src={HeroBack} alt="hero back" className="w-screen h-[100vh]" />
     </div>
   )
 }
