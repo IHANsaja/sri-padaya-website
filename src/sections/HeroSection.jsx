@@ -1,4 +1,4 @@
-import HeroBack from '../assets/hero_back.jpg';
+import HeroBack from '../assets/hero_back.png';
 
 const HeroSection = () => {
   return (
