@@ -59,7 +59,7 @@ const HeroSection = () => {
 
             <directionalLight
               position={[5, 10, 5]}
-              intensity={1.5}
+              intensity={2.5}
               castShadow
               shadow-mapSize-width={2048}
               shadow-mapSize-height={2048}
@@ -89,9 +89,9 @@ const HeroSection = () => {
             />
 
             <DogModel 
-              scale={[-10, 10, 10]}
-              rotation={[0, -Math.PI / 6, 0]}
-              position={[40, -20, -50]}
+              scale={10}
+              rotation={[0, 0, 0]}
+              position={[-10, -20, -40]}
               castShadow
               receiveShadow
               className="z-3"
