@@ -89,12 +89,12 @@ const HeroSection = () => {
             />
 
             <DogModel 
-              scale={8}
-              rotation={[0, -Math.PI / 5, 0]}
-              position={[0, -20, -50]}
+              scale={[-10, 10, 10]}
+              rotation={[0, -Math.PI / 6, 0]}
+              position={[40, -20, -50]}
               castShadow
               receiveShadow
-              className="z-2"
+              className="z-3"
             />
 
             <ContactShadows
