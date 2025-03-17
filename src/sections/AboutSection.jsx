@@ -5,6 +5,7 @@ import { Container, Typography, Grid, Card, CardContent, CardMedia, Box } from '
 import naturalWonderImg from '../assets/example.jpg';
 import heritageValueImg from '../assets/example.jpg';
 import communityTraditionImg from '../assets/example.jpg';
+import RoboRun from './RobotRun';
 
 // TiltCard Component: Tilts the card based on mouse position
 const TiltCard = ({ children }) => {
@@ -45,16 +46,26 @@ const TiltCard = ({ children }) => {
 
 const AboutSection = () => {
   return (
-    <div className="relative bg-gradient-to-r from-[#50A246] to-[#7AB53E] text-white p-8 md:p-16">
+    <div className="relative text-white p-8 md:p-16">
+      {/* RoboRun as background */}
+      <div className="absolute top-0 left-0 w-full h-full z-[-1]">
+        <RoboRun />
+      </div>
+
       <Container maxWidth="lg">
         {/* Animated Header */}
         <motion.div
           whileHover={{ textShadow: '0px 0px 12px #39ff14' }}
           className="mb-12 text-center p-4 rounded-lg shadow-md"
         >
-          <Typography variant="h2" component="h2" className="font-black drop-shadow-lg">
+          <Typography 
+            variant="h2" 
+            component="h2" 
+            className="drop-shadow-lg font-black"
+          >
             ABOUT SRI PADAYA
           </Typography>
+
         </motion.div>
 
         {/* Card Grid */}
@@ -81,6 +92,7 @@ const AboutSection = () => {
                             backgroundClip: 'text',
                             WebkitBackgroundClip: 'text',
                             color: 'transparent',
+                            fontWeight: 900
                           }}
                         >
                           {item.title}
