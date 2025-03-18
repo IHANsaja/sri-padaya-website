@@ -25,7 +25,7 @@ const RoboRun = () => {
             shadow-camera-bottom={-10}
           />
           <RoboModel scale={1} rotation={[0, Math.PI / 2, 0]} position={[-20, -1, -10]} />
-          <ContactShadows position={[-0.1, -4.5, -1]} opacity={0.5} scale={40} blur={0.6} far={10} />
+          <ContactShadows position={[-0.1, -6.5, -1]} opacity={0.5} scale={40} blur={0.6} far={10} />
         </Suspense>
       </Canvas>
     </div>

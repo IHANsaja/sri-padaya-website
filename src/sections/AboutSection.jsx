@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useMotionValue } from 'framer-motion';
 import { FaLeaf } from 'react-icons/fa';
-import { Container, Typography, Grid, Card, CardContent, CardMedia, Box } from '@mui/material';
 import naturalWonderImg from '../assets/example.jpg';
 import heritageValueImg from '../assets/example.jpg';
 import communityTraditionImg from '../assets/example.jpg';
@@ -47,77 +46,51 @@ const TiltCard = ({ children }) => {
 const AboutSection = () => {
   return (
     <div className="relative text-white p-8 md:p-16">
-      {/* RoboRun as background */}
+      {/* Background component */}
       <div className="absolute top-0 left-0 w-full h-full z-[-1]">
         <RoboRun />
       </div>
 
-      <Container maxWidth="lg">
-        {/* Animated Header */}
+      <div className="max-w-6xl mx-auto">
+        {/* Header */}
         <motion.div
           whileHover={{ textShadow: '0px 0px 12px #39ff14' }}
           className="mb-12 text-center p-4 rounded-lg shadow-md"
         >
-          <Typography 
-            variant="h2" 
-            component="h2" 
-            className="drop-shadow-lg font-black"
-          >
+          <h2 className="text-4xl font-bold drop-shadow-lg">
             ABOUT SRI PADAYA
-          </Typography>
-
+          </h2>
         </motion.div>
 
         {/* Card Grid */}
-        <Grid container spacing={4}>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-5">
           {content.map((item, index) => (
-            <Grid item xs={12} md={4} key={index}>
-              <TiltCard>
-                <motion.div whileHover={{ scale: 1.02 }} className="h-full">
-                  <Card className="h-[400px] bg-white text-justify shadow-lg rounded-xl overflow-hidden border-2 border-green-300 transition-all duration-500 hover:border-4 hover:border-gradient hover:shadow-[0_0_40px_#39ff14]">
-                    <CardMedia
-                      component="img"
-                      image={item.image}
-                      alt={item.title}
-                      className="w-full h-48 object-cover"
-                    />
-                    <CardContent className="p-6 flex flex-col justify-between h-[calc(100%-192px)]">
-                      <Box className="flex items-center space-x-3 mb-3">
-                        <FaLeaf className="text-4xl text-green-500" />
-                        <Typography
-                          variant="h5"
-                          className="text-xl font-bold"
-                          style={{
-                            background: 'linear-gradient(135deg, #8B4513, #A0522D)',
-                            backgroundClip: 'text',
-                            WebkitBackgroundClip: 'text',
-                            color: 'transparent',
-                            fontWeight: 900
-                          }}
-                        >
-                          {item.title}
-                        </Typography>
-                      </Box>
-                      <Typography
-                            variant="body2"
-                            className="leading-relaxed text-sm"
-                            style={{
-                            background: 'linear-gradient(135deg, #8B4513, #A0522D)',
-                            backgroundClip: 'text',
-                            WebkitBackgroundClip: 'text',
-                            color: 'transparent',
-                            }}
-                        >
-                            {item.description}
-                        </Typography>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              </TiltCard>
-            </Grid>
+            <TiltCard key={index}>
+              <motion.div whileHover={{ scale: 1.02 }} className="h-full">
+                <div className="bg-[#1E1E1E] h-full p-4 rounded-xl shadow-xl overflow-hidden transition-all duration-500 hover:shadow-2xl">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-48 object-cover rounded-md"
+                  />
+                  {/* Use calc() to subtract the image height (12rem / h-48) from the full height */}
+                  <div className="flex flex-col justify-between h-[calc(100%-15rem)] pt-4 p-5">
+                    <div className="flex items-center space-x-3 mt-3">
+                      <FaLeaf className="text-4xl text-green-500" />
+                      <h5 className="text-xl font-bold text-white">
+                        {item.title}
+                      </h5>
+                    </div>
+                    <p className="text-sm text-gray-300 leading-relaxed text-justify mt-2">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </TiltCard>
           ))}
-        </Grid>
-      </Container>
+        </div>
+      </div>
     </div>
   );
 };
