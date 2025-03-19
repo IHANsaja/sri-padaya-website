@@ -440,6 +440,6 @@ const Log = (props) => {
   )
 }
 
-useGLTF.preload('/public/models/log.glb')
+useGLTF.preload('/sri-padaya-website/models/log.glb')
 
 export default Log;
