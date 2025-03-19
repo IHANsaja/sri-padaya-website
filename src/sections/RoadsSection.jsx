@@ -1,29 +1,78 @@
 import React, { useState } from 'react';
+import Road1 from '../assets/road1.jpg'
+import Road2 from '../assets/road2.jpg'
+import Road3 from '../assets/road3.jpg'
+import Road4 from '../assets/road4.jpg'
+import Road5 from '../assets/road5.jpg'
+import Road6 from '../assets/road6.jpg'
+import Roadback1 from '../assets/roadback.png';
 
 const paths = [
   {
-    name: 'Hatton–Nallathanni Route',
+    name: 'Hatton–Nallathanni Trail',
     description:
-      'The most popular and well-maintained path, it is shorter but steeper, taking about 3-5 hours to climb. For most travelers, the Hatton route is ideal due to its accessibility and facilities along the way.',
+      'The most popular trail, historically known as “Raja Mawatha.” Many kings used this route to reach the summit. It is well-maintained with rest stops and small boutiques every few hundred steps during the season.',
     upsides: ['Shorter distance', 'Well-maintained path', 'Facilities along the way'],
     challenges: ['Steep ascent', 'Can be crowded during peak season'],
-    image: 'https://via.placeholder.com/150',
+    elevationGain: '1000m (1250m - 2250m)',
+    totalLength: '5km',
+    approximateTime: '5 – 7 hours',
+    image: Road1,
   },
   {
-    name: 'Ratnapura–Palabaddala Route',
+    name: 'Ratnapura–Palabaddala Trail',
     description:
-      'A longer but less steep path, suitable for those who prefer a more gradual ascent, taking about 8-12 hours. This trail offers a more secluded experience with rich biodiversity.',
-    upsides: ['Gradual ascent', 'Rich biodiversity', 'Less crowded'],
-    challenges: ['Longer duration', 'Limited facilities'],
-    image: 'https://via.placeholder.com/150',
+      'The oldest and most difficult trail, known for its leech-infested terrain and fewer travelers. Features landmarks like Seetha Gangula, Lihini Hela, and Indikatupana.',
+    upsides: ['Rich biodiversity', 'Less crowded', 'Historical landmarks'],
+    challenges: ['Longer duration', 'Limited facilities', 'Steep and difficult terrain'],
+    elevationGain: '2000m (250m - 2250m)',
+    totalLength: '8.5km',
+    approximateTime: '8 – 12 hours',
+    image: Road2,
   },
   {
-    name: 'Kuruwita–Erathna Route',
+    name: 'Kuruwita–Erathna Trail',
     description:
-      'A less commonly used trail that offers a unique experience through dense forests. It is moderately challenging and takes about 10-14 hours to complete.',
+      'The third most popular route, offering a challenging journey through rough terrain with boulders. Passes notable sites like Warnagala Rock and Warnagala Waterfall.',
     upsides: ['Unique forest trail', 'Serene environment'],
     challenges: ['Long duration', 'Limited facilities', 'Less maintained'],
-    image: 'https://via.placeholder.com/150',
+    elevationGain: '1850m (400m - 2250m)',
+    totalLength: '12km',
+    approximateTime: '8 – 12 hours',
+    image: Road3,
+  },
+  {
+    name: 'Deraniyagala–Udamaliboda Trail',
+    description:
+      'The most remote and least traveled route, passing through the dense Peak Wilderness Sanctuary. Involves multiple stream crossings with flash flood risks.',
+    upsides: ['Pristine nature', 'High adventure'],
+    challenges: ['Rough terrain', 'No facilities', 'Flash flood risk'],
+    elevationGain: '1700m (555m - 2250m)',
+    totalLength: '12km',
+    approximateTime: '8 – 12 hours',
+    image: Road4,
+  },
+  {
+    name: 'Rajamale–Murraywatta Trail',
+    description:
+      'The shortest and lowest-altitude route. The journey starts from Rajamale and passes through a scenic forest path with a large plateau called Sandagalathenna.',
+    upsides: ['Shortest route', 'Scenic plateau', 'Easiest hike'],
+    challenges: ['Limited water sources', 'Minimal facilities'],
+    elevationGain: '640m (1610m - 2250m)',
+    totalLength: '5km',
+    approximateTime: '2 hours',
+    image: Road5,
+  },
+  {
+    name: 'Dehenakanda–Mukkuwaththa Trail',
+    description:
+      'A rarely used but shaded trail with multiple water streams. Passes landmarks like Wellakkara Cave, Bena Samanala Valley, and Seetha Gangula.',
+    upsides: ['Shade and water sources', 'Unique viewpoints'],
+    challenges: ['Difficult terrain', 'Rarely used', 'Challenging ascent'],
+    elevationGain: '1475m (775m - 2250m)',
+    totalLength: '15km',
+    approximateTime: '8 – 12 hours',
+    image: Road6,
   },
 ];
 
@@ -31,74 +80,75 @@ const RoadsSection = () => {
   const [activePath, setActivePath] = useState(0);
 
   return (
-    <div className="w-full min-h-screen bg-[#1e1e1e] py-12 flex items-center justify-center">
-      <div className="max-w-4xl w-full bg-gradient-to-r from-[#50A246] to-[#7AB53E] bg-opacity-90 backdrop-blur-lg rounded-2xl p-6 shadow-lg">
+    <div className="w-full min-h-screen relative bg-gray-900 py-10 flex items-center justify-center">
+      <img src={Roadback1} alt="hiking background" className='absolute bottom-0 right-0 h-auto' />
+      <div className="max-w-6xl w-full bg-white/10 backdrop-blur-xl rounded-2xl p-6 shadow-xl border border-white/20">
         {/* Header */}
         <div className="mb-6 text-center">
-          <h2 className="text-3xl font-bold text-white">Routes to Adam's Peak (Sri Pada)</h2>
+          <h2 className="text-3xl font-bold text-white">Routes to Sri Padaya</h2>
           <p className="text-gray-200 mt-2">
             Select a route to explore its features, challenges, and a brief overview.
           </p>
         </div>
         {/* Tab Menu */}
-        <div className="flex flex-col md:flex-row justify-center space-y-2 md:space-y-0 md:space-x-4 mb-6">
+        <div className="flex flex-wrap justify-center mb-6 space-x-0 md:space-x-4">
           {paths.map((path, index) => (
             <button
               key={index}
               onClick={() => setActivePath(index)}
-              className={`px-4 py-2 rounded-full border transition-colors 
-                ${
-                  activePath === index
-                    ? 'bg-gradient-to-r from-green-500 to-blue-500 text-white border-transparent'
-                    : 'bg-gray-200 text-gray-700 border-gray-300'
-                }`}
+              className={`relative px-5 py-3 m-2 text-sm font-medium rounded-lg group transition-all duration-300 ease-in-out ${
+                activePath === index
+                  ? 'bg-gradient-to-r from-[#50A246] to-[#7AB53E] shadow-lg text-gray-100'
+                  : 'bg-gray-200 text-gray-700'
+              } hover:bg-white hover:shadow-lg hover:text-gray-100`}
             >
-              {path.name}
+              <span
+                className="absolute inset-0 w-full h-full transition-transform transform scale-100 bg-gradient-to-r from-[#50A246] to-[#7AB53E] rounded-lg opacity-0 group-hover:opacity-100 group-hover:scale-105"
+                aria-hidden="true"
+              ></span>
+              <span className="relative z-10">{path.name}</span>
             </button>
           ))}
         </div>
         {/* Details */}
-        <div className="p-4 bg-[#2d312c] rounded-xl transition-opacity duration-500">
-          <h3 className="text-2xl font-bold text-gray-200 mb-4">
-            {paths[activePath].name}
-          </h3>
+        <div className="p-4 bg-gray-800 rounded-xl transition-opacity duration-500">
           {/* Image & Description */}
-          <div className="flex flex-col md:flex-row items-center mb-4">
+          <div className="flex flex-col md:flex-row items-center">
             <img
               src={paths[activePath].image}
               alt={paths[activePath].name}
-              className="w-40 h-40 object-cover rounded-lg mb-4 md:mb-0 md:mr-4"
+              className="w-full md:w-1/2 h-auto object-cover rounded-lg md:mb-0 md:mr-4"
             />
-            <p className="text-gray-100">{paths[activePath].description}</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {/* Upsides */}
-            <div>
-              <h4 className="text-xl font-semibold text-green-600 mb-2">Upsides</h4>
-              <ul className="list-disc list-inside text-gray-700">
-                {paths[activePath].challenges.map((item, idx) => (
-                    <span
-                        key={idx}
-                        className="bg-green-200/50 border-1 border-green-600 inset-shadow-lg inset-shadow-green-400/50 text-[#00ff00] text-xs px-3 py-1 mr-2 mb-2 rounded-full"
-                    >
-                        {item}
-                    </span>
-                ))}
-              </ul>
-            </div>
-            {/* Challenges */}
-            <div>
-              <h4 className="text-xl font-semibold text-red-600 mb-2">Challenges</h4>
-              <ul className="list-disc list-inside text-gray-700">
-                {paths[activePath].challenges.map((item, idx) => (
-                    <span
-                        key={idx}
-                        className="bg-red-200 text-red-800 text-xs px-3 py-1 mr-2 mb-2 rounded-full"
-                    >
-                        {item}
-                    </span>
-                ))}
-              </ul>
+            <div className="text-gray-100 w-full md:w-1/2">
+              <h3 className="text-2xl uppercase font-black text-gray-200 mb-4">
+                {paths[activePath].name}
+              </h3>
+              <p className="mb-4">{paths[activePath].description}</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Upsides */}
+                <div>
+                  <h4 className="text-xl font-semibold text-green-400 mb-2">Upsides</h4>
+                  <ul className="list-disc list-inside text-gray-300">
+                    {paths[activePath].upsides.map((item, idx) => (
+                      <li key={idx}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+                {/* Challenges */}
+                <div>
+                  <h4 className="text-xl font-semibold text-red-400 mb-2">Challenges</h4>
+                  <ul className="list-disc list-inside text-gray-300">
+                    {paths[activePath].challenges.map((item, idx) => (
+                      <li key={idx}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              <div className="mt-4">
+                <p className="text-gray-300"><strong>Elevation Gain:</strong> {paths[activePath].elevationGain}</p>
+                <p className="text-gray-300"><strong>Total Length:</strong> {paths[activePath].totalLength}</p>
+                <p className="text-gray-300"><strong>Approximate Time:</strong> {paths[activePath].approximateTime}</p>
+              </div>
             </div>
           </div>
         </div>
