@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 const Log = (props) => {
-  const { nodes, materials } = useGLTF('/models/log.glb')
+  const { nodes, materials } = useGLTF('/public/models/log.glb')
   return (
     <group {...props} dispose={null}>
       <group rotation={[Math.PI / 2, 0, 0]}>
@@ -440,6 +440,6 @@ const Log = (props) => {
   )
 }
 
-useGLTF.preload('/models/log.glb')
+useGLTF.preload('/public/models/log.glb')
 
 export default Log;
