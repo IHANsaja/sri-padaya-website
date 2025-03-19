@@ -3,7 +3,7 @@ import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 
 const PhoneModel = (props) => {
-  const { nodes, materials } = useGLTF('/models/phone.glb');
+  const { nodes, materials } = useGLTF('/sri-padaya-website/models/phone.glb');
   
   // Create a reference to the group containing the model
   const phoneRef = useRef();
@@ -31,6 +31,6 @@ const PhoneModel = (props) => {
   );
 };
 
-useGLTF.preload('/models/phone.glb');
+useGLTF.preload('/sri-padaya-website/models/phone.glb');
 
 export default PhoneModel;

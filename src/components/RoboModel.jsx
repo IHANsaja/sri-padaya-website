@@ -3,7 +3,7 @@ import { useGLTF, useAnimations } from "@react-three/drei";
 
 const RoboModel = (props) => {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF("/models/robot.glb");
+  const { nodes, materials, animations } = useGLTF("/sri-padaya-website/models/robot.glb");
   const { actions } = useAnimations(animations, group);
 
   useEffect(() => {
@@ -90,6 +90,6 @@ const RoboModel = (props) => {
   );
 };
 
-useGLTF.preload("/models/robot.glb");
+useGLTF.preload("/sri-padaya-website/models/robot.glb");
 
 export default RoboModel;

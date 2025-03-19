@@ -4,7 +4,7 @@ import { useGLTF, useAnimations } from '@react-three/drei';
 const ForgeModel = (props) => {
   const group = useRef();
   // Load GLTF and its animations from the specified file
-  const { nodes, materials, animations } = useGLTF('/models/forge.glb');
+  const { nodes, materials, animations } = useGLTF('/sri-padaya-website/models/forge.glb');
   // Bind the animations to the model's group
   const { actions } = useAnimations(animations, group);
 
@@ -205,6 +205,6 @@ const ForgeModel = (props) => {
   );
 };
 
-useGLTF.preload('/models/forge.glb');
+useGLTF.preload('/sri-padaya-website/models/forge.glb');
 
 export default ForgeModel;

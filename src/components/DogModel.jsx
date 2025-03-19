@@ -4,7 +4,7 @@ import * as THREE from 'three';
 
 const DogModel = (props) => {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF('/models/dog.glb');
+  const { nodes, materials, animations } = useGLTF('/sri-padaya-website/models/dog.glb');
   const { actions } = useAnimations(animations, group);
   const [chatVisible, setChatVisible] = useState(false);
 
@@ -117,6 +117,6 @@ const DogModel = (props) => {
   );
 };
 
-useGLTF.preload('/models/dog.glb');
+useGLTF.preload('/sri-padaya-website/models/dog.glb');
 
 export default DogModel;
