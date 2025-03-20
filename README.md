@@ -1,10 +1,10 @@
 # 🌍 Sri Padaya: Explore the Trails of Sri Lanka
 
-![React](about:sanitized)  
-![Tailwind CSS](about:sanitized)  
-![Three.js](about:sanitized)  
-![Vite](about:sanitized)  
-![GitHub](about:sanitized)
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
 
 Welcome to **Sri Padaya**, an interactive guide to exploring the trails of Sri Lanka's famous pilgrimage site, Adam's Peak, featuring 3D models and trail information for visitors.
 
@@ -14,7 +14,7 @@ Welcome to **Sri Padaya**, an interactive guide to exploring the trails of Sri L
 
 Sri Padaya, also known as Adam's Peak, is one of the most important religious and historical landmarks in Sri Lanka. This website provides an interactive experience, allowing users to explore different trails and their routes through immersive 3D models. Whether you are a local or a tourist, this website is designed to help guide you through the stunning surroundings of Sri Padaya.
 
-### 🌐 **Visit Our Platform:** [![Explore Sri Padaya](about:sanitized)](https://ihansaja.github.io/sri-padaya-website/)
+### 🌐 **Visit Our Platform:** [![Explore Sri Padaya](https://img.shields.io/badge/Visit%20Sri%20Padaya-28A745?style=for-the-badge&logo=github)](https://ihansaja.github.io/sri-padaya-website/)
 
 -----
 
@@ -24,8 +24,8 @@ Sri Padaya is powered by modern technologies for an enhanced interactive experie
 
 | Frontend        | Styling         | 3D Models & Animation | Tools & Libraries  |
 | --------------- | --------------- | --------------------- | ----------------- |
-| ![React](about:sanitized) | ![Tailwind CSS](about:sanitized) | ![Three.js](about:sanitized) | ![Vite](about:sanitized) |
-| ![React Icons](about:sanitized) |  | ![Sketchfab](about:sanitized) |  |
+| ![React](https://img.shields.io/badge/-React-61DAFB?style=for-the-badge&logo=react&logoColor=black) | ![Tailwind CSS](https://img.shields.io/badge/-Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white) | ![Three.js](https://img.shields.io/badge/-Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white) | ![Vite](https://img.shields.io/badge/-Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white) |
+| ![React Icons](https://img.shields.io/badge/-React_Icons-61DAFB?style=for-the-badge&logo=react&logoColor=black) |  | ![Sketchfab](https://img.shields.io/badge/-Sketchfab-2F2F2F?style=for-the-badge&logo=sketchfab&logoColor=white) |  |
 
 -----
 
