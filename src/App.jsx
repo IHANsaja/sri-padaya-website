@@ -1,4 +1,3 @@
-// src/App.jsx
 import React, { useState, useEffect } from 'react';
 import NavBar from './sections/NavBar';
 import HeroSection from './sections/HeroSection';
@@ -27,10 +26,22 @@ function App() {
       ) : (
         <>
           <NavBar />
-          <HeroSection />
-          <AboutSection />
-          <RoadsSection />
-          <ContactForm />
+          <section id="home">
+            <HeroSection />
+          </section>
+
+          <section id="about">
+            <AboutSection />
+          </section>
+
+          <section id="roads">
+            <RoadsSection />
+          </section>
+
+          <section id="contact">
+            <ContactForm />
+          </section>
+
           <Footer />
         </>
       )}

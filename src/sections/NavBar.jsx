@@ -1,56 +1,70 @@
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { navLinks } from "../constants";
 
-const NavItems = ({ toggleMenu }) => {
-  return (
-    <ul className="flex flex-col gap-4 p-4 bg-green-700 cursor-pointer rounded-md w-full md:flex md:flex-row md:gap-10 md:bg-transparent font-bold text-lg">
-      {navLinks.map(({ id, href, name }) => (
-        <li key={id} className="nav-hover">
-          <a href={href} onClick={toggleMenu} className="decoration-0">
-            {name}
-          </a>
-        </li>
-      ))}
-    </ul>
-  );
-};
+export const navLinks = [
+    {
+        id: 1,
+        name: "Home",
+        url: "#home",
+    },
+    {
+        id: 2,
+        name: "About",
+        url: "#about",
+    },
+    {
+        id: 3,
+        name: "Roads",
+        url: "#roads",
+    },
+    {
+        id: 4,
+        name: "Contact",
+        url: "#contact",
+    },
+];
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Toggle function to open/close the mobile menu
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
-    <header className="fixed top-0 left-0 w-full bg-transparent z-100">
-      <div className="flex flex-row justify-between w-full items-center p-4 px-8">
-        <a href="/" className="text-white text-2xl font-bold">
-          Sri Paadaya
+    <nav className="bg-transparent fixed w-full z-[5000] font-[var(--font-poppins)]">
+      <div className="container mx-auto px-4 py-5 flex justify-between items-center">
+        <a href="#home" className="decoration-0">
+          <h1 className="font-bold text-gray-100 text-3xl transition-transform duration-300 hover:scale-105">
+            SRI PADAYA
+          </h1>
         </a>
-
-        {/* Desktop Navigation */}
-        <nav className="md:flex hidden">
-          <NavItems />
-        </nav>
-
-        {/* Mobile menu button */}
-        <button className="md:hidden sm:flex" onClick={toggleMenu}>
-          {isOpen ? <FaTimes size={30} /> : <FaBars size={30} />}
+        <div className="hidden md:flex space-x-10">
+          {navLinks.map((link) => (
+            <a 
+              key={link.id} 
+              href={link.url} 
+              className="text-gray-100 font-bold text-xl relative after:content-[''] after:absolute after:left-0 after:bottom-[-3px] after:w-0 after:h-[2px] after:bg-green-400 after:transition-all after:duration-300 hover:text-green-400 hover:after:w-full">
+              {link.name}
+            </a>
+          ))}
+        </div>
+        <button
+          className="md:hidden text-gray-100 text-2xl transition-transform duration-300 hover:scale-110 flex items-center justify-center"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <FaTimes className="block mx-auto" /> : <FaBars className="block mx-auto" />}
         </button>
       </div>
-
-      {/* Mobile Menu: only render if isOpen is true */}
       {isOpen && (
-        <div className="md:hidden mx-4 flex justify-center items-center fixed top-10 inset-x-0 z-50">
-          <nav className="w-full mt-5">
-            <NavItems toggleMenu={toggleMenu} />
-          </nav>
+        <div className="md:hidden bg-green-300/40 shadow-lg absolute w-full left-0 top-[100%] p-6 flex flex-col items-center space-y-6 rounded-lg backdrop-blur-lg">
+          {navLinks.map((link) => (
+            <a 
+              key={link.id} 
+              href={link.url} 
+              className="text-gray-100 bg-[#7AB53E] text-lg font-bold transition-all duration-300 hover:text-green-900 hover:bg-[#7AB53E] px-4 py-2 rounded-lg shadow-md hover:scale-110">
+              {link.name}
+            </a>
+          ))}
         </div>
       )}
-    </header>
+    </nav>
   );
 };
 
